@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"math"
 	"net/http"
@@ -36,19 +35,22 @@ var receiptPoints = make(map[string]int)
 
 func processReceiptHandler(c *gin.Context) {
 	log.Printf("POST : %v\n", c.Request.URL)
-
 	log.Println("processReceiptHandler(c *gin.Context) handling request")
 	var newReceipt Receipt
 	if err := c.BindJSON(&newReceipt); err != nil {
 		log.Fatalf("Error: %v\n", err)
 		return
 	}
-	newReceipt.Id = uuid.New().String()
-	receipts = append(receipts, newReceipt)
-	receiptPoints[newReceipt.Id] = processReceiptPoints(newReceipt)
-	c.IndentedJSON(http.StatusCreated, gin.H{"id": newReceipt.Id})
-	log.Printf("Response sent: {id:%v}\n", newReceipt.Id)
-
+	if isEmpty(newReceipt) {
+		log.Println("Error: Empty payload")
+		c.IndentedJSON(http.StatusBadRequest, gin.H{"error": "Empty Payload"})
+	} else {
+		newReceipt.Id = uuid.New().String()
+		receipts = append(receipts, newReceipt)
+		receiptPoints[newReceipt.Id] = processReceiptPoints(newReceipt)
+		c.IndentedJSON(http.StatusCreated, gin.H{"id": newReceipt.Id})
+		log.Printf("Response sent: {id:%v}\n", newReceipt.Id)
+	}
 }
 
 func getReceiptPointsByIdHandler(c *gin.Context) {
@@ -57,20 +59,20 @@ func getReceiptPointsByIdHandler(c *gin.Context) {
 	points, exists := receiptPoints[id]
 	pointsStr := strconv.Itoa(points)
 	if exists {
-		log.Printf("Sending Response: {points:%v}\n", pointsStr)
 		c.IndentedJSON(http.StatusFound, gin.H{"points": pointsStr})
+		log.Printf("Response Sent: {\"points\":\"%v\"}\n", pointsStr)
 	} else {
-		log.Printf("No receipt found with id: %v", id)
-		log.Printf("Sending Response: \"No receipt found with id: %v\"", id)
+		log.Printf("Error: No receipt found with id: %v", id)
 		c.IndentedJSON(http.StatusNotFound, gin.H{"error": "No receipt found with id: " + id})
+		log.Printf("Response Sent: {\"error\" : \"No receipt found with id: %v\"} ", id)
 	}
 
 }
 
 func getAllReceiptsHandler(c *gin.Context) {
 	log.Printf("GET : %v\n", c.Request.URL)
-	log.Printf("Sending response: \"receipts\": \"{%v}\"\n", receipts)
 	c.IndentedJSON(http.StatusFound, gin.H{"receipts": receipts})
+	log.Printf("Response Sent: {\"receipts\": {%v}\n}", receipts)
 }
 
 func processReceiptPoints(receipt Receipt) int {
@@ -148,7 +150,7 @@ func getPointsFromDateTime(date string, timeStr string) (int, error) {
 	dateTimeStr := date + " " + timeStr
 	purchaseDateTime, err := time.Parse("2006-01-02 15:04", dateTimeStr)
 	if err != nil {
-		fmt.Printf("Error: %v", err)
+		log.Printf("Error: %v", err)
 		return 0, err
 	}
 	var points int
@@ -171,14 +173,22 @@ func getLogFileName() string {
 	return logFileName
 }
 
+func isEmpty(r Receipt) bool {
+	if (r.Id == "") && (len(r.Items) == 0) && (r.PurchaseDate == "") && (r.PurchaseTime == "") && (r.Retailer == "") && (r.Total == "") {
+		return true
+	}
+	return false
+}
+
 func main() {
 	router := gin.Default()
 	logFileName := getLogFileName()
-	fmt.Println(logFileName)
+
 	logfile, err := os.Create(logFileName)
 	if err != nil {
 		log.Fatal(err)
 	}
+	log.Printf("Log File Created: %v\n ", logFileName)
 	defer logfile.Close()
 	log.SetOutput(logfile)
 	log.Println("Server is starting...")
