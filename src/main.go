@@ -2,8 +2,10 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"math"
 	"net/http"
+	"os"
 	"regexp"
 	"strconv"
 	"strings"
@@ -33,44 +35,46 @@ var receipts []Receipt
 var receiptPoints = make(map[string]int)
 
 func processReceiptHandler(c *gin.Context) {
+	log.Printf("POST : %v\n", c.Request.URL)
+
+	log.Println("processReceiptHandler(c *gin.Context) handling request")
 	var newReceipt Receipt
 	if err := c.BindJSON(&newReceipt); err != nil {
-		fmt.Printf("Error: %v\n", err)
+		log.Fatalf("Error: %v\n", err)
 		return
 	}
 	newReceipt.Id = uuid.New().String()
 	receipts = append(receipts, newReceipt)
 	receiptPoints[newReceipt.Id] = processReceiptPoints(newReceipt)
 	c.IndentedJSON(http.StatusCreated, gin.H{"id": newReceipt.Id})
+	log.Printf("Response sent: {id:%v}\n", newReceipt.Id)
 
 }
 
 func getReceiptPointsByIdHandler(c *gin.Context) {
 	id := c.Param("id")
+	log.Printf("GET : %v\n", c.Request.URL)
 	points, exists := receiptPoints[id]
 	pointsStr := strconv.Itoa(points)
 	if exists {
+		log.Printf("Sending Response: {points:%v}\n", pointsStr)
 		c.IndentedJSON(http.StatusFound, gin.H{"points": pointsStr})
 	} else {
+		log.Printf("No receipt found with id: %v", id)
+		log.Printf("Sending Response: \"No receipt found with id: %v\"", id)
 		c.IndentedJSON(http.StatusNotFound, gin.H{"error": "No receipt found with id: " + id})
 	}
 
 }
 
 func getAllReceiptsHandler(c *gin.Context) {
+	log.Printf("GET : %v\n", c.Request.URL)
+	log.Printf("Sending response: \"receipts\": \"{%v}\"\n", receipts)
 	c.IndentedJSON(http.StatusFound, gin.H{"receipts": receipts})
 }
 
-func main() {
-	router := gin.Default()
-
-	router.POST("/receipts/process", processReceiptHandler)
-	router.GET("/receipts/:id/points", getReceiptPointsByIdHandler)
-	router.GET("/receipts", getAllReceiptsHandler)
-	router.Run("localhost:8080")
-}
-
 func processReceiptPoints(receipt Receipt) int {
+	log.Println("Processing receipt points...")
 	var points int
 	points += getNumberOfAlphanumericCharInString(receipt.Retailer)
 	_, cents, err := getDollarAndCentFromPrice(receipt.Total)
@@ -93,6 +97,7 @@ func processReceiptPoints(receipt Receipt) int {
 	if err == nil {
 		points += pointsFromDateTime
 	}
+	log.Printf("Total Points: %v\n", points)
 	return points
 }
 
@@ -139,6 +144,7 @@ func getPointsFromItemDescription(item Item) (int, error) {
 }
 
 func getPointsFromDateTime(date string, timeStr string) (int, error) {
+	// log.Fatal("")
 	dateTimeStr := date + " " + timeStr
 	purchaseDateTime, err := time.Parse("2006-01-02 15:04", dateTimeStr)
 	if err != nil {
@@ -154,4 +160,31 @@ func getPointsFromDateTime(date string, timeStr string) (int, error) {
 		points += 10
 	}
 	return points, nil
+}
+
+func getLogFileName() string {
+	logDir := "./logs"
+	currentTime := time.Now()
+	date := currentTime.Format("01-02-2006 15:04:05")
+	dateStr := strings.ReplaceAll(date, " ", "_")
+	logFileName := logDir + "/app-log_" + dateStr + ".log"
+	return logFileName
+}
+
+func main() {
+	router := gin.Default()
+	logFileName := getLogFileName()
+	fmt.Println(logFileName)
+	logfile, err := os.Create(logFileName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer logfile.Close()
+	log.SetOutput(logfile)
+	log.Println("Server is starting...")
+	router.POST("/receipts/process", processReceiptHandler)
+	router.GET("/receipts/:id/points", getReceiptPointsByIdHandler)
+	router.GET("/receipts", getAllReceiptsHandler)
+	router.Run("localhost:8080")
+
 }
