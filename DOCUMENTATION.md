@@ -1,5 +1,7 @@
 # Code Documentation
 
+Primary Language: Go
+
 The code provides an API for processing receipts, calculating points, and retrieving receipt information, making it useful for building a receipt tracking and reward system.
 
 The following documentation provides an overview and explanation of the functionality of the provided Go code.

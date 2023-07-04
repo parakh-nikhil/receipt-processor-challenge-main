@@ -13,7 +13,7 @@ A webservice that processes receipt points and stores the receipts.  Data does n
 
 ## Code Documentation
 
-The code gitdocumentation can be found in DOCUMENTATION.md fle.
+The code gitdocumentation can be found in [DOCUMENTATION.md](https://github.com/parakh-nikhil/receipt-processor-challenge-main/blob/master/DOCUMENTATION.md) fle.
 
 ## Summary of API Specification
 
