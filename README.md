@@ -17,6 +17,8 @@ The code gitdocumentation can be found in [DOCUMENTATION.md](https://github.com/
 
 ## Summary of API Specification
 
+The API is documented in [api.yaml](https://github.com/parakh-nikhil/receipt-processor-challenge-main/blob/master/api.yml) file
+
 ### Endpoint: Process Receipts
 
 * Path: `/receipts/process`
