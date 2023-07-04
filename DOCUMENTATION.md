@@ -74,3 +74,14 @@ The ```main``` function serves as the entry point of the program. It performs th
 - Creates a log file based on the current date and time.
 - Sets the log output to the file.
 - Starts the server on localhost:8080.
+
+## Logs
+Logs are stored under the ```~/src/logs``` directory.
+
+The structure of the log files is ```app-log_{DATE}_{TIME}.log```. Every time the server is restarted, it creates a log file and stores the server events on the file.
+
+Example: 
+
+*app-log_07-04-2023_17:23:48.log*
+
+This is the log file for the server when it was started on (07-04-2023) at (17:23:48).
