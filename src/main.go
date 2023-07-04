@@ -33,7 +33,6 @@ var receipts []Receipt
 var receiptPoints = make(map[string]int)
 
 func processReceiptHandler(c *gin.Context) {
-
 	var newReceipt Receipt
 	if err := c.BindJSON(&newReceipt); err != nil {
 		fmt.Printf("Error: %v\n", err)
@@ -49,11 +48,11 @@ func processReceiptHandler(c *gin.Context) {
 func getReceiptPointsByIdHandler(c *gin.Context) {
 	id := c.Param("id")
 	points, exists := receiptPoints[id]
+	pointsStr := strconv.Itoa(points)
 	if exists {
-		fmt.Printf("points: %v\n", points)
-		c.IndentedJSON(http.StatusFound, gin.H{"points": points})
+		c.IndentedJSON(http.StatusFound, gin.H{"points": pointsStr})
 	} else {
-		c.IndentedJSON(http.StatusNotFound, gin.H{"error": "No receipt found with id " + id})
+		c.IndentedJSON(http.StatusNotFound, gin.H{"error": "No receipt found with id: " + id})
 	}
 
 }
@@ -148,13 +147,10 @@ func getPointsFromDateTime(date string, timeStr string) (int, error) {
 	}
 	var points int
 	if purchaseDateTime.Day()%2 != 0 {
-		fmt.Println("\nODD DAY")
 		points += 6
 	}
 
-	fmt.Printf("HOUR: %v\n", purchaseDateTime.Hour())
 	if purchaseDateTime.Hour() >= 14 && purchaseDateTime.Hour() < 16 {
-		fmt.Println("betw 2 & 4 pm")
 		points += 10
 	}
 	return points, nil
