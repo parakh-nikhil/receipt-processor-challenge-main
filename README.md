@@ -15,7 +15,7 @@ A webservice that processes receipt points and stores the receipts.  Data does n
 
 The code documentation can be found in [DOCUMENTATION.md](https://github.com/parakh-nikhil/receipt-processor-challenge-main/blob/master/DOCUMENTATION.md) fle.
 
-The Unit tests documentation can be found in [UNIT_TESTS_DOCUMENTATION.md]https://github.com/parakh-nikhil/receipt-processor-challenge-main/blob/master/UNIT_TESTS_DOCUMENTATION.md) file
+The Unit tests documentation can be found in [UNIT_TESTS_DOCUMENTATION.md](https://github.com/parakh-nikhil/receipt-processor-challenge-main/blob/master/UNIT_TESTS_DOCUMENTATION.md) file
 
 ## Summary of API Specification
 
