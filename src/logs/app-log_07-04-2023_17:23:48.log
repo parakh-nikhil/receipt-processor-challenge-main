@@ -1,0 +1,94 @@
+2023/07/04 17:23:48 Server is starting...
+2023/07/04 17:24:13 POST : /receipts/process
+2023/07/04 17:24:13 processReceiptHandler(c *gin.Context) handling request
+2023/07/04 17:24:13 Processing receipt points...
+2023/07/04 17:24:13 Total Points: 28
+2023/07/04 17:24:13 Response sent: {id:de27f01d-6e81-4044-8b00-33a8df58f104}
+2023/07/04 17:24:13 POST : /receipts/process
+2023/07/04 17:24:13 processReceiptHandler(c *gin.Context) handling request
+2023/07/04 17:24:13 Processing receipt points...
+2023/07/04 17:24:13 Total Points: 15
+2023/07/04 17:24:13 Response sent: {id:2da0d44a-5ca8-41cb-b5e9-cfd59047569a}
+2023/07/04 17:24:13 POST : /receipts/process
+2023/07/04 17:24:13 processReceiptHandler(c *gin.Context) handling request
+2023/07/04 17:24:13 Processing receipt points...
+2023/07/04 17:24:13 Total Points: 109
+2023/07/04 17:24:13 Response sent: {id:f2eec490-596b-4b6d-9e17-cc43fbd669c3}
+2023/07/04 17:24:13 POST : /receipts/process
+2023/07/04 17:24:13 processReceiptHandler(c *gin.Context) handling request
+2023/07/04 17:24:13 Processing receipt points...
+2023/07/04 17:24:13 Total Points: 28
+2023/07/04 17:24:13 Response sent: {id:a923f0b3-b1a3-4730-a860-b70cfb031730}
+2023/07/04 17:24:13 POST : /receipts/process
+2023/07/04 17:24:13 processReceiptHandler(c *gin.Context) handling request
+2023/07/04 17:24:13 Processing receipt points...
+2023/07/04 17:24:13 Total Points: 31
+2023/07/04 17:24:13 Response sent: {id:3cd1a860-24f2-49d8-86c9-7d71a54648e3}
+2023/07/04 17:24:13 GET : /receipts
+2023/07/04 17:24:13 Response Sent: {"receipts": {[{de27f01d-6e81-4044-8b00-33a8df58f104 Target 2022-01-01 13:01 [{ Mountain Dew 12PK 6.49} { Emils Cheese Pizza 12.25} { Knorr Creamy Chicken 1.26} { Doritos Nacho Cheese 3.35} {    Klarbrunn 12-PK 12 FL OZ   12.00}] 35.35} {2da0d44a-5ca8-41cb-b5e9-cfd59047569a Walgreens 2022-01-02 08:13 [{ Pepsi - 12-oz 1.25} { Dasani 1.40}] 2.65} {f2eec490-596b-4b6d-9e17-cc43fbd669c3 M&M Corner Market 2022-03-20 14:33 [{ Gatorade 2.25} { Gatorade 2.25} { Gatorade 2.25} { Gatorade 2.25}] 9.00} {a923f0b3-b1a3-4730-a860-b70cfb031730 Target 2022-01-01 13:01 [{ Mountain Dew 12PK 6.49} { Emils Cheese Pizza 12.25} { Knorr Creamy Chicken 1.26} { Doritos Nacho Cheese 3.35} {    Klarbrunn 12-PK 12 FL OZ   12.00}] 35.35} {3cd1a860-24f2-49d8-86c9-7d71a54648e3 Target 2022-01-02 13:13 [{ Pepsi - 12-oz 1.25}] 1.25}]}
+}
+2023/07/04 17:24:13 GET : /receipts/b9ef6c43-0989-46f8-87a3-122e2eaab421/points
+2023/07/04 17:24:13 Error: No receipt found with id: b9ef6c43-0989-46f8-87a3-122e2eaab421
+2023/07/04 17:24:13 Response Sent: {"error" : "No receipt found with id: b9ef6c43-0989-46f8-87a3-122e2eaab421"} 
+2023/07/04 17:24:42 POST : /receipts/process
+2023/07/04 17:24:42 processReceiptHandler(c *gin.Context) handling request
+2023/07/04 17:24:42 Processing receipt points...
+2023/07/04 17:24:42 Total Points: 28
+2023/07/04 17:24:42 Response sent: {id:01ce992a-94bc-49f4-bd7f-31efc9fb43a6}
+2023/07/04 17:24:42 POST : /receipts/process
+2023/07/04 17:24:42 processReceiptHandler(c *gin.Context) handling request
+2023/07/04 17:24:42 Processing receipt points...
+2023/07/04 17:24:42 Total Points: 15
+2023/07/04 17:24:42 Response sent: {id:1826c90d-e4b9-469c-828b-e90ea7c10e01}
+2023/07/04 17:24:42 POST : /receipts/process
+2023/07/04 17:24:42 processReceiptHandler(c *gin.Context) handling request
+2023/07/04 17:24:42 Processing receipt points...
+2023/07/04 17:24:42 Total Points: 109
+2023/07/04 17:24:42 Response sent: {id:046d7cf8-9d72-443b-a4cc-9539c8e1d6e7}
+2023/07/04 17:24:42 POST : /receipts/process
+2023/07/04 17:24:42 processReceiptHandler(c *gin.Context) handling request
+2023/07/04 17:24:42 Processing receipt points...
+2023/07/04 17:24:42 Total Points: 28
+2023/07/04 17:24:42 Response sent: {id:5c91fdb1-b73d-4e38-afff-119a0ff0554f}
+2023/07/04 17:24:42 POST : /receipts/process
+2023/07/04 17:24:42 processReceiptHandler(c *gin.Context) handling request
+2023/07/04 17:24:42 Processing receipt points...
+2023/07/04 17:24:42 Total Points: 31
+2023/07/04 17:24:42 Response sent: {id:6008e829-6edb-4933-a4d7-8622c72a04fa}
+2023/07/04 17:24:42 GET : /receipts
+2023/07/04 17:24:42 Response Sent: {"receipts": {[{de27f01d-6e81-4044-8b00-33a8df58f104 Target 2022-01-01 13:01 [{ Mountain Dew 12PK 6.49} { Emils Cheese Pizza 12.25} { Knorr Creamy Chicken 1.26} { Doritos Nacho Cheese 3.35} {    Klarbrunn 12-PK 12 FL OZ   12.00}] 35.35} {2da0d44a-5ca8-41cb-b5e9-cfd59047569a Walgreens 2022-01-02 08:13 [{ Pepsi - 12-oz 1.25} { Dasani 1.40}] 2.65} {f2eec490-596b-4b6d-9e17-cc43fbd669c3 M&M Corner Market 2022-03-20 14:33 [{ Gatorade 2.25} { Gatorade 2.25} { Gatorade 2.25} { Gatorade 2.25}] 9.00} {a923f0b3-b1a3-4730-a860-b70cfb031730 Target 2022-01-01 13:01 [{ Mountain Dew 12PK 6.49} { Emils Cheese Pizza 12.25} { Knorr Creamy Chicken 1.26} { Doritos Nacho Cheese 3.35} {    Klarbrunn 12-PK 12 FL OZ   12.00}] 35.35} {3cd1a860-24f2-49d8-86c9-7d71a54648e3 Target 2022-01-02 13:13 [{ Pepsi - 12-oz 1.25}] 1.25} {01ce992a-94bc-49f4-bd7f-31efc9fb43a6 Target 2022-01-01 13:01 [{ Mountain Dew 12PK 6.49} { Emils Cheese Pizza 12.25} { Knorr Creamy Chicken 1.26} { Doritos Nacho Cheese 3.35} {    Klarbrunn 12-PK 12 FL OZ   12.00}] 35.35} {1826c90d-e4b9-469c-828b-e90ea7c10e01 Walgreens 2022-01-02 08:13 [{ Pepsi - 12-oz 1.25} { Dasani 1.40}] 2.65} {046d7cf8-9d72-443b-a4cc-9539c8e1d6e7 M&M Corner Market 2022-03-20 14:33 [{ Gatorade 2.25} { Gatorade 2.25} { Gatorade 2.25} { Gatorade 2.25}] 9.00} {5c91fdb1-b73d-4e38-afff-119a0ff0554f Target 2022-01-01 13:01 [{ Mountain Dew 12PK 6.49} { Emils Cheese Pizza 12.25} { Knorr Creamy Chicken 1.26} { Doritos Nacho Cheese 3.35} {    Klarbrunn 12-PK 12 FL OZ   12.00}] 35.35} {6008e829-6edb-4933-a4d7-8622c72a04fa Target 2022-01-02 13:13 [{ Pepsi - 12-oz 1.25}] 1.25}]}
+}
+2023/07/04 17:24:42 GET : /receipts/b9ef6c43-0989-46f8-87a3-122e2eaab421/points
+2023/07/04 17:24:42 Error: No receipt found with id: b9ef6c43-0989-46f8-87a3-122e2eaab421
+2023/07/04 17:24:42 Response Sent: {"error" : "No receipt found with id: b9ef6c43-0989-46f8-87a3-122e2eaab421"} 
+2023/07/04 17:25:15 POST : /receipts/process
+2023/07/04 17:25:15 processReceiptHandler(c *gin.Context) handling request
+2023/07/04 17:25:15 Error: Empty payload
+2023/07/04 17:25:15 POST : /receipts/process
+2023/07/04 17:25:15 processReceiptHandler(c *gin.Context) handling request
+2023/07/04 17:25:15 Processing receipt points...
+2023/07/04 17:25:15 Total Points: 15
+2023/07/04 17:25:15 Response sent: {id:38d98996-8c40-4ee5-aa68-0cd617cd6015}
+2023/07/04 17:25:16 POST : /receipts/process
+2023/07/04 17:25:16 processReceiptHandler(c *gin.Context) handling request
+2023/07/04 17:25:16 Processing receipt points...
+2023/07/04 17:25:16 Total Points: 109
+2023/07/04 17:25:16 Response sent: {id:eca07a78-60af-43a3-8179-92271e6e0c19}
+2023/07/04 17:25:16 POST : /receipts/process
+2023/07/04 17:25:16 processReceiptHandler(c *gin.Context) handling request
+2023/07/04 17:25:16 Processing receipt points...
+2023/07/04 17:25:16 Total Points: 28
+2023/07/04 17:25:16 Response sent: {id:07df84b7-76d9-42a6-9f9b-5635883c97b7}
+2023/07/04 17:25:16 POST : /receipts/process
+2023/07/04 17:25:16 processReceiptHandler(c *gin.Context) handling request
+2023/07/04 17:25:16 Processing receipt points...
+2023/07/04 17:25:16 Total Points: 31
+2023/07/04 17:25:16 Response sent: {id:15aabac2-0d7e-4188-9a77-27185d175fcb}
+2023/07/04 17:25:16 GET : /receipts
+2023/07/04 17:25:16 Response Sent: {"receipts": {[{de27f01d-6e81-4044-8b00-33a8df58f104 Target 2022-01-01 13:01 [{ Mountain Dew 12PK 6.49} { Emils Cheese Pizza 12.25} { Knorr Creamy Chicken 1.26} { Doritos Nacho Cheese 3.35} {    Klarbrunn 12-PK 12 FL OZ   12.00}] 35.35} {2da0d44a-5ca8-41cb-b5e9-cfd59047569a Walgreens 2022-01-02 08:13 [{ Pepsi - 12-oz 1.25} { Dasani 1.40}] 2.65} {f2eec490-596b-4b6d-9e17-cc43fbd669c3 M&M Corner Market 2022-03-20 14:33 [{ Gatorade 2.25} { Gatorade 2.25} { Gatorade 2.25} { Gatorade 2.25}] 9.00} {a923f0b3-b1a3-4730-a860-b70cfb031730 Target 2022-01-01 13:01 [{ Mountain Dew 12PK 6.49} { Emils Cheese Pizza 12.25} { Knorr Creamy Chicken 1.26} { Doritos Nacho Cheese 3.35} {    Klarbrunn 12-PK 12 FL OZ   12.00}] 35.35} {3cd1a860-24f2-49d8-86c9-7d71a54648e3 Target 2022-01-02 13:13 [{ Pepsi - 12-oz 1.25}] 1.25} {01ce992a-94bc-49f4-bd7f-31efc9fb43a6 Target 2022-01-01 13:01 [{ Mountain Dew 12PK 6.49} { Emils Cheese Pizza 12.25} { Knorr Creamy Chicken 1.26} { Doritos Nacho Cheese 3.35} {    Klarbrunn 12-PK 12 FL OZ   12.00}] 35.35} {1826c90d-e4b9-469c-828b-e90ea7c10e01 Walgreens 2022-01-02 08:13 [{ Pepsi - 12-oz 1.25} { Dasani 1.40}] 2.65} {046d7cf8-9d72-443b-a4cc-9539c8e1d6e7 M&M Corner Market 2022-03-20 14:33 [{ Gatorade 2.25} { Gatorade 2.25} { Gatorade 2.25} { Gatorade 2.25}] 9.00} {5c91fdb1-b73d-4e38-afff-119a0ff0554f Target 2022-01-01 13:01 [{ Mountain Dew 12PK 6.49} { Emils Cheese Pizza 12.25} { Knorr Creamy Chicken 1.26} { Doritos Nacho Cheese 3.35} {    Klarbrunn 12-PK 12 FL OZ   12.00}] 35.35} {6008e829-6edb-4933-a4d7-8622c72a04fa Target 2022-01-02 13:13 [{ Pepsi - 12-oz 1.25}] 1.25} {38d98996-8c40-4ee5-aa68-0cd617cd6015 Walgreens 2022-01-02 08:13 [{ Pepsi - 12-oz 1.25} { Dasani 1.40}] 2.65} {eca07a78-60af-43a3-8179-92271e6e0c19 M&M Corner Market 2022-03-20 14:33 [{ Gatorade 2.25} { Gatorade 2.25} { Gatorade 2.25} { Gatorade 2.25}] 9.00} {07df84b7-76d9-42a6-9f9b-5635883c97b7 Target 2022-01-01 13:01 [{ Mountain Dew 12PK 6.49} { Emils Cheese Pizza 12.25} { Knorr Creamy Chicken 1.26} { Doritos Nacho Cheese 3.35} {    Klarbrunn 12-PK 12 FL OZ   12.00}] 35.35} {15aabac2-0d7e-4188-9a77-27185d175fcb Target 2022-01-02 13:13 [{ Pepsi - 12-oz 1.25}] 1.25}]}
+}
+2023/07/04 17:25:16 GET : /receipts/b9ef6c43-0989-46f8-87a3-122e2eaab421/points
+2023/07/04 17:25:16 Error: No receipt found with id: b9ef6c43-0989-46f8-87a3-122e2eaab421
+2023/07/04 17:25:16 Response Sent: {"error" : "No receipt found with id: b9ef6c43-0989-46f8-87a3-122e2eaab421"} 
+2023/07/04 17:25:32 GET : /receipts/38d98996-8c40-4ee5-aa68-0cd617cd6015/points
+2023/07/04 17:25:32 Response Sent: {"points":"15"}

@@ -88,3 +88,23 @@ func TestGetReceiptPointsWithWrongId(t *testing.T) {
 	errMsg := response["error"]
 	assert.Equal(t, errMsg, "No receipt found with id: "+wrongId)
 }
+
+func TestGetReceiptPointsWithNoId(t *testing.T) {
+	gin.SetMode(gin.TestMode)
+	router := gin.Default()
+
+	router.GET("/receipts/:id/points", getReceiptPointsByIdHandler)
+	wrongId := ""
+	path := "/receipts/" + wrongId + "/points"
+	req, err := http.NewRequest("GET", path, nil)
+	if err != nil {
+		t.Fatal(err)
+	}
+	res := httptest.NewRecorder()
+	router.ServeHTTP(res, req)
+	assert.Equal(t, http.StatusNotFound, res.Code)
+	var response map[string]string
+	_ = json.Unmarshal(res.Body.Bytes(), &response)
+	errMsg := response["error"]
+	assert.Equal(t, errMsg, "No receipt found with id: "+wrongId)
+}
