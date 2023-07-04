@@ -18,18 +18,7 @@ func TestProcessReceiptHandler(t *testing.T) {
 
 	router.POST("/receipts/process", processReceiptHandler)
 
-	sampleReceipt := Receipt{
-		Retailer:     "Target",
-		PurchaseDate: "2022-01-02",
-		PurchaseTime: "13:13",
-		Items: []Item{
-			{
-				ShortDescription: "Pepsi - 12-oz",
-				Price:            "1.25",
-			},
-		},
-		Total: "1.25",
-	}
+	sampleReceipt := getASampleReceipt()
 
 	payload, _ := json.Marshal(sampleReceipt)
 	req, err := http.NewRequest("POST", "/receipts/process", bytes.NewBuffer(payload))
@@ -46,4 +35,21 @@ func TestProcessReceiptHandler(t *testing.T) {
 
 	assert.True(t, exists)
 	assert.NotEmpty(t, id)
+}
+
+func getASampleReceipt() Receipt {
+	sampleReceipt := Receipt{
+		Retailer:     "Target",
+		PurchaseDate: "2022-01-02",
+		PurchaseTime: "13:13",
+		Items: []Item{
+			{
+				ShortDescription: "Pepsi - 12-oz",
+				Price:            "1.25",
+			},
+		},
+		Total: "1.25",
+	}
+
+	return sampleReceipt
 }
