@@ -1,0 +1,4 @@
+2023/07/04 01:52:13 Server is starting...
+2023/07/04 01:52:15 GET : /receipts/5479056a-83a9-4f8d-a81d-88640e2ab11a/points
+2023/07/04 01:52:15 No receipt found with id: 5479056a-83a9-4f8d-a81d-88640e2ab11a
+2023/07/04 01:52:15 Sending Response: "No receipt found with id: 5479056a-83a9-4f8d-a81d-88640e2ab11a"

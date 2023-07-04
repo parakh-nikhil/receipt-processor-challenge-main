@@ -1,0 +1,27 @@
+2023/07/04 01:50:02 Server is starting...
+2023/07/04 01:50:09 POST : /receipts/process
+2023/07/04 01:50:09 processReceiptHandler(c *gin.Context) handling request
+2023/07/04 01:50:09 Processing receipt points...
+2023/07/04 01:50:09 Total Points: 15
+2023/07/04 01:50:09 Response sent: {id:bd2b0ea2-5335-4675-a0ed-325ad5b9cc74}
+2023/07/04 01:50:11 POST : /receipts/process
+2023/07/04 01:50:11 processReceiptHandler(c *gin.Context) handling request
+2023/07/04 01:50:11 Processing receipt points...
+2023/07/04 01:50:11 Total Points: 109
+2023/07/04 01:50:11 Response sent: {id:5479056a-83a9-4f8d-a81d-88640e2ab11a}
+2023/07/04 01:50:13 POST : /receipts/process
+2023/07/04 01:50:13 processReceiptHandler(c *gin.Context) handling request
+2023/07/04 01:50:13 Processing receipt points...
+2023/07/04 01:50:13 Total Points: 28
+2023/07/04 01:50:13 Response sent: {id:4c3cd1c4-97fc-4785-9367-b2da8af0c190}
+2023/07/04 01:50:16 POST : /receipts/process
+2023/07/04 01:50:16 processReceiptHandler(c *gin.Context) handling request
+2023/07/04 01:50:16 Processing receipt points...
+2023/07/04 01:50:16 Total Points: 31
+2023/07/04 01:50:16 Response sent: {id:572ce5fa-fd3b-464b-a954-10837ecb1f1e}
+2023/07/04 01:50:20 GET : /receipts
+2023/07/04 01:50:20 Sending response: "receipts": "{[{bd2b0ea2-5335-4675-a0ed-325ad5b9cc74 Walgreens 2022-01-02 08:13 [{ Pepsi - 12-oz 1.25} { Dasani 1.40}] 2.65} {5479056a-83a9-4f8d-a81d-88640e2ab11a M&M Corner Market 2022-03-20 14:33 [{ Gatorade 2.25} { Gatorade 2.25} { Gatorade 2.25} { Gatorade 2.25}] 9.00} {4c3cd1c4-97fc-4785-9367-b2da8af0c190 Target 2022-01-01 13:01 [{ Mountain Dew 12PK 6.49} { Emils Cheese Pizza 12.25} { Knorr Creamy Chicken 1.26} { Doritos Nacho Cheese 3.35} {    Klarbrunn 12-PK 12 FL OZ   12.00}] 35.35} {572ce5fa-fd3b-464b-a954-10837ecb1f1e Target 2022-01-02 13:13 [{ Pepsi - 12-oz 1.25}] 1.25}]}"
+2023/07/04 01:50:39 GET : /receipts/9ef9989b-0b68-4e0a-bc14-e3ea8ba14922/points
+2023/07/04 01:50:39 No receipt found with id: 9ef9989b-0b68-4e0a-bc14-e3ea8ba14922
+2023/07/04 01:50:48 GET : /receipts/5479056a-83a9-4f8d-a81d-88640e2ab11a/points
+2023/07/04 01:50:48 Sending Response: {points:109}
